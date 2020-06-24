@@ -1,9 +1,9 @@
-import React from "react";
-import { useAuth } from "../context/AuthContext";
+import React, { useContext } from "react";
 import { useTeam } from "../context/TeamContext";
+import { AuthContext } from "../context/AuthContext";
 
 const Team = () => {
-  const { auth, login, logout } = useAuth();
+  const { auth, login, logout } = useContext(AuthContext)
   const { team } = useTeam();
 
   const handleLogin = () => {

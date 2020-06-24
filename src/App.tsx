@@ -1,14 +1,14 @@
 import React from "react";
 import Team from "./components/Team";
-import AuthContext, { useAuth } from "./context/AuthContext";
+import { AuthContextProvider } from "./context/AuthContext";
+
 
 function App() {
-  const authState = useAuth()
   return (
     <div>
-      <AuthContext.Provider value={authState.auth}>
+      <AuthContextProvider>
         <Team />
-      </AuthContext.Provider>
+      </AuthContextProvider>
     </div>
   );
 }
